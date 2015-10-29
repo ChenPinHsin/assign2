@@ -60,7 +60,7 @@ void draw() {
       image(start1, 0, 0);
       if (mousePressed ) {
         gameState = GAME_PLAYING;
-        hpL = 195;
+        hpL = 39;
       }
     } else {
       image(start2, 0, 0);
