@@ -9,7 +9,8 @@ int treasureX, treasureY;
 int enemyX, enemyY;
 int gameState;
 float fighterX, fighterY;
-float speed =3;
+float speed =6;
+float enemySpeed =3;
 
 boolean upPressed = false;
 boolean downPressed = false;
@@ -79,28 +80,26 @@ void draw() {
 
     //fighter
     image(fighter, fighterX, fighterY);
-        if (upPressed) {
-          if(fighterY > 0){
-          fighterY -= fighterSpeed;
-          }
-        }
-        if (downPressed) {
-          if(fighterY < 430){
-          fighterY += fighterSpeed;
-          }
-        }
-        if (leftPressed) {
-          if(fighterX > 0){
-          fighterX -= fighterSpeed;
-          }
-        }
-        if (rightPressed) {
-          if(fighterX <590){
-          fighterX += fighterSpeed;
-          }
-        }      
-
-
+    if (upPressed) {
+      if (fighterY > 0) {
+        fighterY -= speed;
+      }
+    }
+    if (downPressed) {
+      if (fighterY < 430) {
+        fighterY += speed;
+      }
+    }
+    if (leftPressed) {
+      if (fighterX > 0) {
+        fighterX -= speed;
+      }
+    }
+    if (rightPressed) {
+      if (fighterX <590) {
+        fighterX += speed;
+      }
+    }  
 
     //hpBar
     fill(255, 0, 0);
@@ -136,19 +135,19 @@ void draw() {
 
     //enemy
     image(enemy, enemyX, enemyY);
-    enemyX += speed;
+    enemyX += enemySpeed;
     enemyX %= width;
 
     if (enemyY >= fighterY) {
-      enemyY -= speed;
+      enemyY -= enemySpeed;
     }
     if (enemyY < fighterY) {
-      enemyY += speed;
+      enemyY += enemySpeed;
     } 
 
     break;
-    
-    case GAME_LOSE:
+
+  case GAME_LOSE:
     if (mouseX > width/2-120 && mouseX <width/2+120 && mouseY >height/2+60 && mouseY<height/2+110) {
       image(end1, 0, 0);
       if (mousePressed ) {
