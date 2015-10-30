@@ -79,31 +79,26 @@ void draw() {
 
     //fighter
     image(fighter, fighterX, fighterY);
-    if (upPressed) {
-      fighterY -= speed;
-    }
-    if (downPressed) {
-      fighterY += speed;
-    }
-    if (leftPressed) {
-      fighterX -= speed;
-    }
-    if (rightPressed) {
-      fighterX += speed;
-    }
-    //boundary detection
-    if (fighterX > width) {
-      fighterX = 0;
-    }
-    if (fighterX < 0) {
-      fighterX = width;
-    }
-    if (fighterY > height) {
-      fighterY = 0;
-    }
-    if (fighterY < 0) {
-      fighterY = height;
-    }
+        if (upPressed) {
+          if(fighterY > 0){
+          fighterY -= fighterSpeed;
+          }
+        }
+        if (downPressed) {
+          if(fighterY < 430){
+          fighterY += fighterSpeed;
+          }
+        }
+        if (leftPressed) {
+          if(fighterX > 0){
+          fighterX -= fighterSpeed;
+          }
+        }
+        if (rightPressed) {
+          if(fighterX <590){
+          fighterX += fighterSpeed;
+          }
+        }      
 
 
 
