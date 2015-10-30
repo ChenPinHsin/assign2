@@ -98,7 +98,7 @@ void draw() {
     if (rightPressed) {
       if (fighterX <590) {
         fighterX += speed;
-      }
+      } 
     }  
 
     //hpBar
